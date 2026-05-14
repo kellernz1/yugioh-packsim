@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Millennium Pack Sim</title>
+    <link rel="preconnect" href="https://db.ygoprodeck.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="opening-stage" aria-labelledby="app-title">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Yu-Gi-Oh! Gacha</p>
+            <h1 id="app-title">Millennium Pack Sim</h1>
+          </div>
+          <div class="stats-panel" aria-live="polite">
+            <span id="collection-count">0 cartas</span>
+            <strong id="collection-value">$0.00</strong>
+            <span class="wallet-label">Saldo</span>
+            <strong id="wallet-balance">$0.00</strong>
+          </div>
+        </div>
+
+        <div class="stage-grid">
+          <section class="ritual-zone" aria-label="Abertura de booster">
+            <div id="pack" class="pack" role="button" tabindex="0" aria-label="Abrir pacote">
+              <div class="pack-half pack-top">
+                <span id="pack-title">Millennium</span>
+              </div>
+              <div class="pack-half pack-bottom">
+                <span id="pack-edition">Starter Pack</span>
+              </div>
+              <div class="pack-rib"></div>
+            </div>
+
+            <div id="card-fan" class="card-fan" aria-live="polite"></div>
+
+            <div class="controls">
+              <button id="open-button" class="primary-button" type="button">
+                Abrir booster
+              </button>
+              <button id="reset-button" class="icon-button" type="button" title="Limpar colecao">
+                R
+              </button>
+              <button id="mute-button" class="icon-button" type="button" aria-pressed="false" title="Mutar audio">
+                ON
+              </button>
+            </div>
+            <p id="status" class="status">Carregando cartas reais da API...</p>
+          </section>
+
+          <aside class="reveal-zone" aria-label="Carta em destaque">
+            <div id="featured-card" class="featured-card empty">
+              <span>Ultima carta rara aparece aqui</span>
+            </div>
+            <a id="share-link" class="share-link hidden" target="_blank" rel="noreferrer">
+              Compartilhar pull raro
+            </a>
+            <div class="shop-panel" aria-label="Loja de boosters">
+              <div class="shop-heading">
+                <p class="eyebrow">Loja</p>
+                <h2>Boosters</h2>
+              </div>
+              <div id="booster-shop" class="booster-shop"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="album-section" aria-labelledby="album-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"></p>
+            <h2 id="album-title">Album de Colecionador</h2>
+          </div>
+          <div class="album-actions">
+            <p id="api-note">Raridades simuladas com cartas e precos da YGOPRODeck API.</p>
+            <button id="sell-commons-button" class="secondary-button" type="button">
+              Vender comuns
+            </button>
+          </div>
+        </div>
+        <div id="album-grid" class="album-grid"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
